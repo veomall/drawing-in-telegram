@@ -2,18 +2,18 @@ from tkinter import *
 
 
 def paint(event):
-    x, y = event.x // 40, event.y // 40
-    c.create_rectangle(x * 40, y * 40, x * 40 + 40, y * 40 + 40, fill='black')
+    x, y = event.x // 20, event.y // 20
+    c.create_rectangle(x * 20, y * 20, x * 20 + 20, y * 20 + 20, fill='black')
     field[x][y] = 1
 
 
 def clear(event):
-    x, y = event.x // 40, event.y // 40
-    c.create_rectangle(x * 40, y * 40, x * 40 + 40, y * 40 + 40, fill='white')
+    x, y = event.x // 20, event.y // 20
+    c.create_rectangle(x * 20, y * 20, x * 20 + 20, y * 20 + 20, fill='white')
     field[x][y] = 0
 
 
-field = [[0 for j in range(16)] for i in range(16)]
+field = [[0 for j in range(32)] for i in range(32)]
 field[0][0] = '.  '
 
 root = Tk()
@@ -22,9 +22,9 @@ root.geometry('640x640+200+100')
 c = Canvas(root, width=640, height=640, bg='white')
 c.pack()
 
-for i in range(16):
-    for j in range(16):
-        c.create_rectangle(i * 40, j * 0, i * 40 + 40, j * 40 + 40)
+for i in range(32):
+    for j in range(32):
+        c.create_rectangle(i * 20, j * 0, i * 20 + 20, j * 20 + 20)
 
 root.bind('<Button-1>', paint)
 root.bind('<B1-Motion>', paint)
@@ -32,9 +32,9 @@ root.bind('<Button-3>', clear)
 root.bind('<B3-Motion>', clear)
 root.mainloop()
 f = open('pad.txt', 'w')
-for i in range(16):
+for i in range(32):
     k = 0
-    for j in range(16):
+    for j in range(32):
         if field[j][i] == 0:
             if k % 2 == 0:
                 f.write('   ')
