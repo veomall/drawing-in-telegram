@@ -12,3 +12,6 @@ This program will help you draw simple shapes using special characters or text. 
 5. In the folder, where the exe file is located, it should appear "pad.txt" file.
 6. Open it, copy all text and paste in telegram.
 7. Send it to your friend.
+
+
+Also you can open and see how the python file works
